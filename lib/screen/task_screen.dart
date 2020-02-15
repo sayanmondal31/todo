@@ -13,6 +13,7 @@ class TasksScreen extends StatefulWidget {
 class _TasksScreenState extends State<TasksScreen> {
   @override
   Widget build(BuildContext context) {
+    String writting_emoji = "📝";
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
@@ -50,12 +51,23 @@ class _TasksScreenState extends State<TasksScreen> {
                       color: Colors.white),
                 ),
                 SizedBox(height: 5),
-                Text(
-                  "${Provider.of<TaskData>(context).totalTask} ${Provider.of<TaskData>(context).totalTask < 2 ? "task" : "tasks"}",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      color: Colors.white),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      "${Provider.of<TaskData>(context).totalTask} ${Provider.of<TaskData>(context).totalTask < 2 ? "task" : "tasks"}",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20,
+                          color: Colors.white),
+                    ),
+                     Text(
+                      " ${Provider.of<TaskData>(context).totalTask == 0 ? "Click + button to add new work":"$writting_emoji"  }",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20,
+                          color: Colors.white),
+                    ),
+                  ],
                 )
               ],
             ),
