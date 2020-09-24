@@ -44,7 +44,7 @@ class AddTask extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 100),
                 color: Colors.lightBlueAccent,
                 onPressed: () {
-                  Provider.of<TaskData>(context,listen: false).addTask(updatedDatalist);
+                  Provider.of<TaskData>(context,listen: false).addTask(updatedDatalist??'');
                   Navigator.pop(context);
                 },
                 child: Text(
